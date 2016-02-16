@@ -50,20 +50,20 @@ class MacTrayObject(NSObject):
         # Build a very simple menu
         self.menu = NSMenu.alloc().init()
 
-        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Config', 'config:', '')
+        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_(u"设置", 'config:', '')
         self.menu.addItem_(menuitem)
 
-        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Enable Global Goagent Proxy', 'enableProxy:', '')
+        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_(u"全局PAC智能代理", 'enableProxy:', '')
         self.menu.addItem_(menuitem)
 
-        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Disable Global Goagent Proxy', 'disableProxy:', '')
+        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_(u"取消全局代理", 'disableProxy:', '')
         self.menu.addItem_(menuitem)
 
         # Rest Menu Item
-        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Reload GoAgent', 'resetGoagent:', '')
+        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_(u"重启 GAEProxy", 'resetGoagent:', '')
         self.menu.addItem_(menuitem)
         # Default event
-        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Quit', 'windowWillClose:', '')
+        menuitem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_(u"退出", 'windowWillClose:', '')
         self.menu.addItem_(menuitem)
         # Bind it to the status item
         self.statusitem.setMenu_(self.menu)
